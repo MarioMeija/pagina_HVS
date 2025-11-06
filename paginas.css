@@ -1,0 +1,426 @@
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------Base general de estilos para todas las paginas del sitio web--------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Variables de colores y fuentes */
+:root {
+    --primary: rgb(79, 127, 212);
+    --secondary: #e9c46a;
+    --accent: #e76f51;
+    --light: #f8f9fa;
+    --dark: rgb(121, 190, 109);
+    --text: #333333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: rgb(234, 237, 240);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: transparent;
+}
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+section {
+    padding: 5rem 0;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--dark);
+    position: relative;
+}
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------nuevo menu--------------------------------------------- */
+header {
+  padding: 15px;
+  background-color: var(--primary);
+  color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+}
+.dropdownmenu ul,
+.dropdownmenu li {
+  margin: 0%;
+  padding: 0%;
+}
+.dropdownmenu ul {
+  background: var(--dark);
+  list-style: none;
+  width: 100%;
+}
+.dropdownmenu li {
+  float: left;
+  position: relative;
+  width: auto;
+}
+.dropdownmenu a {
+  background: var(--primary);
+  color: #FFFFFF;
+  display: block;
+  font: bold 12px/20px sans-serif;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  font-size: 1.0em;
+}
+.dropdownmenu ul li a {
+  transform: 0.3s, 
+  background-color 0.3s ease;
+}
+.dropdownmenu ul li a:hover {
+  transform: translateY(6px);
+  /* la funcion:   "transform: scale" aumenta el tamaño del elemento */
+  background-color: var(--dark);
+}
+.dropdownmenu li:hover a {
+  background: var(--dark);
+}
+#submenu {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 35px;
+  visibility: hidden;
+  z-index: 1;
+}
+li:hover ul#submenu {
+  opacity: 1;
+  top: 40px;
+  /* adjust this as per top nav padding top & bottom comes */
+  visibility: visible;
+}
+#submenu li {
+  float: none;
+  width: 100%;
+}
+#submenu a:hover {
+  background: var(--primary);
+}
+#submenu a {
+  background-color: var(--dark);
+}
+/* --------------------------------fin del nuevo menu---------------------------------------------------------------------------------------------- */
+
+
+/*---------------------- Portada---------------- */
+.vision-empresa {
+  background: var(--dark);
+  color: white;
+  padding: 3rem 2rem;
+  margin: 0rem 0;
+  text-align: center;
+}
+.contenedor-vision {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.vision-empresa h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+.vision-empresa p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  padding: 10px;
+}
+/*----------------- fin de portada ----------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* Contenedor principal */
+.servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 10px;
+}
+
+/* Contenedor de cada servicio - usa GUION BAJO para una sola clase */
+.servicios_contenido {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 60px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de texto */
+.servicios_texto {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.servicios_titulo h1 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+
+}
+
+.servicios_titulo h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 50%;
+    width: 150px;
+    height: 3px;
+    background: var(--primary);
+    }
+
+.servicios_texto p {
+    color: #555;
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: 25px;
+}
+
+/* Contenedor de imagen */
+.servicios_imagen {
+    flex: 1;
+    min-height: 400px;
+}
+
+.servicios_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .servicios_contenido {
+        flex-direction: column;
+    }
+    
+    .servicios_imagen {
+        min-height: 300px;
+        order: -1;
+    }
+    
+    .servicios_titulo h1 {
+        text-align: center;
+    }
+    
+    .servicios_titulo h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+/* ------------------BOTON  whatsapp---------------------------------------------------------------------------------------------------------------- */
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+}
+
+.whatsapp-btn i {
+    font-size: 32px;
+}
+
+.sucursal-selector {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 999;
+    width: 280px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sucursal-header {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #128C7E;
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.sucursal-option {
+    padding: 12px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.sucursal-option:hover {
+    background-color: #f0f8f5;
+}
+
+.sucursal-option i {
+    margin-right: 12px;
+    font-size: 20px;
+    color: #128C7E;
+}
+
+.sucursal-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.sucursal-number {
+    font-size: 13px;
+    color: #777;
+    margin-top: 3px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-btn:hover {
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .sucursal-selector {
+        width: 250px;
+        right: 15px;
+    }
+    
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+}
+/* ----------------------fin de BOTON  whatsapp--------------------------------------------------------------------- */
