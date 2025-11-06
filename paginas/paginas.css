@@ -31,6 +31,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 a {
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -38,6 +39,7 @@ a {
     font-weight: 700;
     background-color: transparent;
 }
+
 ul {
     list-style: none;
 }
@@ -47,6 +49,7 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -64,18 +67,22 @@ ul {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
+
 .btn-secondary {
     background-color: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
 }
+
 .btn-secondary:hover {
     background-color: var(--primary);
     color: white;
 }
+
 section {
     padding: 5rem 0;
 }
+
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -83,6 +90,7 @@ section {
     color: var(--dark);
     position: relative;
 }
+
 .section-title:after {
     content: '';
     display: block;
@@ -97,108 +105,138 @@ section {
 
 /* -------------------------------------nuevo menu--------------------------------------------- */
 header {
-  padding: 15px;
-  background-color: var(--primary);
-  color: var(--dark);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: -webkit-sticky;
-  /* Safari */
-  position: sticky;
-  top: 0;
+    padding: 15px;
+    background-color: var(--primary);
+    color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
 }
+
 .dropdownmenu ul,
 .dropdownmenu li {
-  margin: 0%;
-  padding: 0%;
+    margin: 0%;
+    padding: 0%;
 }
+
 .dropdownmenu ul {
-  background: var(--dark);
-  list-style: none;
-  width: 100%;
+    background: var(--dark);
+    list-style: none;
+    width: 100%;
 }
+
 .dropdownmenu li {
-  float: left;
-  position: relative;
-  width: auto;
+    float: left;
+    position: relative;
+    width: auto;
 }
+
 .dropdownmenu a {
-  background: var(--primary);
-  color: #FFFFFF;
-  display: block;
-  font: bold 12px/20px sans-serif;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
-  font-size: 1.0em;
+    background: var(--primary);
+    color: #FFFFFF;
+    display: block;
+    font: bold 12px/20px sans-serif;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+    font-size: 1.0em;
 }
+
 .dropdownmenu ul li a {
-  transform: 0.3s, 
-  background-color 0.3s ease;
+    transform: 0.3s,
+        background-color 0.3s ease;
 }
+
 .dropdownmenu ul li a:hover {
-  transform: translateY(6px);
-  /* la funcion:   "transform: scale" aumenta el tamaño del elemento */
-  background-color: var(--dark);
+    transform: translateY(6px);
+    /* la funcion:   "transform: scale" aumenta el tamaño del elemento */
+    background-color: var(--dark);
 }
+
 .dropdownmenu li:hover a {
-  background: var(--dark);
+    background: var(--dark);
 }
+
 #submenu {
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 35px;
-  visibility: hidden;
-  z-index: 1;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    visibility: hidden;
+    z-index: 1;
 }
+
 li:hover ul#submenu {
-  opacity: 1;
-  top: 40px;
-  /* adjust this as per top nav padding top & bottom comes */
-  visibility: visible;
+    opacity: 1;
+    top: 40px;
+    /* adjust this as per top nav padding top & bottom comes */
+    visibility: visible;
 }
+
 #submenu li {
-  float: none;
-  width: 100%;
+    float: none;
+    width: 100%;
 }
+
 #submenu a:hover {
-  background: var(--primary);
+    background: var(--primary);
 }
+
 #submenu a {
-  background-color: var(--dark);
+    background-color: var(--dark);
 }
+
 /* --------------------------------fin del nuevo menu---------------------------------------------------------------------------------------------- */
 
-
 /*---------------------- Portada---------------- */
-.vision-empresa {
-  background: var(--dark);
-  color: white;
-  padding: 3rem 2rem;
-  margin: 0rem 0;
-  text-align: center;
+.cirugia {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 2rem;
+    margin: 0rem 0;
+    text-align: center;
 }
-.contenedor-vision {
-  max-width: 900px;
-  margin: 0 auto;
+
+.contenedor-cirugia {
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.vision-empresa h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  padding: 10px;
+
+.contenedor-cirugia-h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    padding: 10px;
+    color: white;
+    font-weight: 700;
+    text-shadow: #313131 1px 1px 2px;
+    }
+   
+
+.contenedor-cirugia-p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding: 10px;
 }
-.vision-empresa p {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  padding: 10px;
+
+.contenedor-cirugia-2 {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 /*----------------- fin de portada ----------------- */
 
 
@@ -218,7 +256,7 @@ li:hover ul#submenu {
     padding: 10px 10px;
 }
 
-/* Contenedor de cada servicio - usa GUION BAJO para una sola clase */
+/* Contenedor de cada servicio - */
 .servicios_contenido {
     display: flex;
     align-items: stretch;
@@ -226,7 +264,7 @@ li:hover ul#submenu {
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor de texto */
@@ -258,7 +296,7 @@ li:hover ul#submenu {
     width: 150px;
     height: 3px;
     background: var(--primary);
-    }
+}
 
 .servicios_texto p {
     color: #555;
@@ -286,16 +324,16 @@ li:hover ul#submenu {
     .servicios_contenido {
         flex-direction: column;
     }
-    
+
     .servicios_imagen {
         min-height: 300px;
         order: -1;
     }
-    
+
     .servicios_titulo h1 {
         text-align: center;
     }
-    
+
     .servicios_titulo h1::after {
         left: 50%;
         transform: translateX(-50%);
@@ -303,8 +341,33 @@ li:hover ul#submenu {
 }
 
 
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #ffffff;
+    background: linear-gradient(to top, rgb(50, 50, 50), #000000);
+}
 
 
+
+/* ------final----- */
+.final {
+    background: black;
+    color: white;
+    padding: 2rem 0.4rem;
+    margin: 0rem 0;
+    text-align: center;
+}
+
+.contenedor-final {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: #313131 1px 1px 2px;
+}
+
+/* -------final------ */
 
 /* ------------------BOTON  whatsapp---------------------------------------------------------------------------------------------------------------- */
 
@@ -350,8 +413,15 @@ li:hover ul#submenu {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sucursal-header {
@@ -415,7 +485,7 @@ li:hover ul#submenu {
         width: 250px;
         right: 15px;
     }
-    
+
     .whatsapp-btn {
         bottom: 20px;
         right: 20px;
@@ -423,4 +493,5 @@ li:hover ul#submenu {
         height: 55px;
     }
 }
+
 /* ----------------------fin de BOTON  whatsapp--------------------------------------------------------------------- */
