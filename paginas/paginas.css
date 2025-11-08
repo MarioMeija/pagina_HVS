@@ -1,8 +1,4 @@
-/* ------------------------------------------------------------------------------------------------------------------------------- */
-/* ----------------------Base general de estilos para todas las paginas del sitio web--------------------------------------------- */
-/* ------------------------------------------------------------------------------------------------------------------------------- */
-
-/* Variables de colores y fuentes */
+/* ========== VARIABLES GLOBALES ========== */
 :root {
     --primary: rgb(79, 127, 212);
     --secondary: #e9c46a;
@@ -11,10 +7,15 @@
     --dark: rgb(121, 190, 109);
     --text: #333333;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
     --transition: all 0.3s ease;
+    --transition-slow: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --glow-color: rgba(255, 255, 255, 0.6);
+    --glow-intensity: 0.8;
+    --card-radius: 12px;
 }
 
-/* Reset y estilos generales */
+/* ========== RESET Y ESTILOS BASE ========== */
 * {
     margin: 0;
     padding: 0;
@@ -26,10 +27,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: rgb(234, 237, 240);
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: var(--light);
 }
 
 a {
@@ -50,60 +48,11 @@ ul {
     margin: 0 auto;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary);
-    color: white;
-}
-
 section {
     padding: 5rem 0;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--dark);
-    position: relative;
-}
-
-.section-title:after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--primary);
-    margin: 15px auto;
-    border-radius: 2px;
-}
-
-/* --------------------------------------------------------------------------------------------------------- */
-
-/* -------------------------------------nuevo menu--------------------------------------------- */
+/* ========== HEADER Y NAVEGACIÓN ========== */
 header {
     padding: 15px;
     background-color: var(--primary);
@@ -111,16 +60,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: -webkit-sticky;
-    /* Safari */
     position: sticky;
     top: 0;
-}
-
-.dropdownmenu ul,
-.dropdownmenu li {
-    margin: 0%;
-    padding: 0%;
+    z-index: 1000;
 }
 
 .dropdownmenu ul {
@@ -143,27 +85,13 @@ header {
     padding: 10px 25px;
     text-align: center;
     text-decoration: none;
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
+    transition: all 0.25s ease;
     font-size: 1.0em;
-}
-
-.dropdownmenu ul li a {
-    transform: 0.3s,
-        background-color 0.3s ease;
 }
 
 .dropdownmenu ul li a:hover {
     transform: translateY(6px);
-    /* la funcion:   "transform: scale" aumenta el tamaño del elemento */
     background-color: var(--dark);
-}
-
-.dropdownmenu li:hover a {
-    background: var(--dark);
 }
 
 #submenu {
@@ -178,7 +106,6 @@ header {
 li:hover ul#submenu {
     opacity: 1;
     top: 40px;
-    /* adjust this as per top nav padding top & bottom comes */
     visibility: visible;
 }
 
@@ -187,124 +114,152 @@ li:hover ul#submenu {
     width: 100%;
 }
 
-#submenu a:hover {
-    background: var(--primary);
-}
-
 #submenu a {
     background-color: var(--dark);
 }
 
-/* --------------------------------fin del nuevo menu---------------------------------------------------------------------------------------------- */
-
-/*---------------------- Portada---------------- */
-.cirugia {
-    background: var(--dark);
-    color: white;
-    padding: 5rem 3rem;
-    margin: 0rem 0;
-    text-align: center;
-}
-.contenedor-cirugia {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.contenedor-cirugia-h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    padding: 10px;
-    color: white;
-    font-weight: 700;
-    text-shadow: #313131 1px 1px 2px;
-    }
-
-.contenedor-cirugia-p {
-    font-size:1.8rem;
-    line-height: 1.6;
-    padding: 10px;
+#submenu a:hover {
+    background: var(--primary);
 }
 
-/*----------------- fin de portada ----------------- */
-
+/* ========== HERO SECTION ========== */
 .hero {
     height: 70vh;
-    background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)), url(cirugia/portada_cirugia.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)), url('cirugia/portada_cirugia.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     color: white;
     text-align: center;
     padding-top: 80px;
 }
+
 .hero-content {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
 }
+
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
+
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
     font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* ========== SECCIÓN CIRUGÍA CON EFECTOS ========== */
+.cirugia {
+    background: var(--dark);
+    color: white;
+    padding: 5rem 3rem;
+    text-align: center;
+}
 
+.contenedor-cirugia {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.contenedor-cirugia-p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
 
-
-
-
-
-/* Contenedor principal */
+/* ========== SERVICIOS CON EFECTOS MEJORADOS ========== */
 .servicios {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 10px;
+    padding: 4rem 1rem;
 }
 
-/* Contenedor de cada servicio - */
 .servicios_contenido {
     display: flex;
     align-items: stretch;
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
     background: #fff;
-    border-radius: 10px;
+    border-radius: var(--card-radius);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    transition: var(--transition-slow);
+    position: relative;
+    border: 1px solid transparent;
 }
 
-/* Contenedor de texto */
+/* Efecto de iluminación en bordes */
+.servicios_contenido::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--card-radius);
+    padding: 2px;
+    background: linear-gradient(45deg, transparent, var(--glow-color), transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.servicios_contenido:hover::before {
+    opacity: var(--glow-intensity);
+}
+
+.servicios_contenido:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
 .servicios_texto {
     flex: 1;
-    padding: 40px;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .servicios_titulo h1 {
     color: var(--primary);
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     font-weight: 700;
     position: relative;
+    display: inline-block;
     text-align: center;
-
+    width: 100%;
 }
 
+/* Efecto de subrayado animado para títulos */
 .servicios_titulo h1::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    right: 50%;
-    width: 150px;
+    width: 0;
     height: 3px;
-    background: var(--primary);
+    background: linear-gradient(90deg, transparent, var(--primary));
+    transition: width 0.6s ease;
+    border-radius: 1px;
+}
+
+.servicios_contenido:hover .servicios_titulo h1::after {
+    width: 80%;
 }
 
 .servicios_texto p {
@@ -312,13 +267,14 @@ li:hover ul#submenu {
     text-align: justify;
     font-size: 1.1rem;
     line-height: 1.7;
-    margin-top: 25px;
+    margin-top: 1.5rem;
 }
 
-/* Contenedor de imagen */
 .servicios_imagen {
     flex: 1;
     min-height: 400px;
+    overflow: hidden;
+    position: relative;
 }
 
 .servicios_imagen img {
@@ -326,45 +282,18 @@ li:hover ul#submenu {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-    .servicios_contenido {
-        flex-direction: column;
-    }
-
-    .servicios_imagen {
-        min-height: 300px;
-        order: -1;
-    }
-
-    .servicios_titulo h1 {
-        text-align: center;
-    }
-
-    .servicios_titulo h1::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.servicios_contenido:hover .servicios_imagen img {
+    transform: scale(1.1);
 }
 
-
-footer {
-    text-align: center;
-    padding: 15px;
-    color: #ffffff;
-    background: linear-gradient(to top, rgb(50, 50, 50), #000000);
-}
-
-
-
-/* ------final----- */
+/* ========== SECCIÓN FINAL ========== */
 .final {
     background: black;
     color: white;
-    padding: 2rem 0.4rem;
-    margin: 0rem 0;
+    padding: 4rem 1rem;
     text-align: center;
 }
 
@@ -376,10 +305,15 @@ footer {
     text-shadow: #313131 1px 1px 2px;
 }
 
-/* -------final------ */
+/* ========== FOOTER ========== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #ffffff;
+    background: linear-gradient(to top, rgb(50, 50, 50), #000000);
+}
 
-/* ------------------BOTON  whatsapp---------------------------------------------------------------------------------------------------------------- */
-
+/* ========== WHATSAPP ========== */
 .whatsapp-btn {
     position: fixed;
     bottom: 25px;
@@ -395,7 +329,7 @@ footer {
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: var(--transition-slow);
 }
 
 .whatsapp-btn:hover {
@@ -426,7 +360,6 @@ footer {
         opacity: 0;
         transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -489,247 +422,82 @@ footer {
     color: #555;
 }
 
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .servicios_contenido {
+        flex-direction: column;
+    }
+
+    .servicios_imagen {
+        min-height: 300px;
+        order: -1;
+    }
+
+    .servicios_titulo h1 {
+        text-align: center;
+    }
+
+    .servicios_texto {
+        padding: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .contenedor-cirugia-p {
+        font-size: 1.4rem;
+    }
+
+    .contenedor-final {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 600px) {
     .sucursal-selector {
         width: 250px;
         right: 15px;
     }
-
+    
     .whatsapp-btn {
         bottom: 20px;
         right: 20px;
         width: 55px;
         height: 55px;
     }
-}
 
-/* ----------------------fin de BOTON  whatsapp--------------------------------------------------------------------- */
-
-
-/* ================================================================================================================ */
-/* ============================================Cartas en movimiento =============================================== */
-/* ================================================================================================================ */
-/* ESTILOS PARA LAS TARJETAS NOSOTROS CON CARRUSEL HORIZONTAL */
-.nosotros-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-/* ESTILOS BASE PARA TODAS LAS TARJETAS NOSOTROS */
-.nosotros-card {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    aspect-ratio: 16/9;
-}
-
-/* ========== TARJETA NOSOTROS 1 ========== */
-.nosotros-card-1 {
-    grid-column: 1;
-    grid-row: 1;
-    aspect-ratio: 16/14;
-}
-
-/* ========== TARJETA NOSOTROS 2 ========== */
-.nosotros-card-2 {
-    grid-column: 2;
-    grid-row: 1;
-    aspect-ratio: 16/14;
-}
-
-/* ========== TARJETA NOSOTROS 3 ========== */
-.nosotros-card-3 {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    aspect-ratio: 32/9;
-}
-
-/* CONTENEDOR DE IMÁGENES PARA EL CARRUSEL HORIZONTAL */
-.nosotros-card-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400%; /* 4 imágenes = 400% */
-    height: 100%;
-    display: flex;
-    animation: none; /* Inicialmente desactivado */
-}
-
-.nosotros-card-image img {
-    width: 25%; /* Cada imagen ocupa 25% del contenedor (100%/4) */
-    height: 100%;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-/* ANIMACIÓN DE CARRUSEL HORIZONTAL INFINITO AL HOVER */
-.nosotros-card:hover .nosotros-card-image {
-    animation: nosotrosCarruselHorizontal 20s linear infinite;
-}
-
-@keyframes nosotrosCarruselHorizontal {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-75%); /* Se mueve 3 imágenes (75%) */
-    }
-}
-
-/* GRADIENTE Y OVERLAY */
-.nosotros-card-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        transparent 30%,
-        rgba(0, 0, 0, 0.4) 60%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
-    z-index: 1;
-}
-
-/* ESTILOS PARA EL CONTENIDO - CORREGIDOS */
-.nosotros-card-content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem;
-    color: white;
-    pointer-events: none;
-    box-sizing: border-box;
-}
-
-.nosotros-card-title {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    line-height: 1.2;
-}
-
-.nosotros-card-description {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    opacity: 0.95;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    line-height: 1.4;
-    max-width: 100%;
-}
-
-.nosotros-card-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-/* EFECTO SUAVE EN LA TARJETA (como en los primeros códigos) */
-.nosotros-card {
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translateY(0);
-}
-
-.nosotros-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-/* ZOOM SUAVE EN LAS IMÁGENES INDIVIDUALES */
-.nosotros-card-image img {
-    transition: transform 0.8s ease;
-}
-
-.nosotros-card:hover .nosotros-card-image img {
-    transform: scale(1.05);
-}
-
-/* RESPONSIVE DESIGN MEJORADO */
-@media (max-width: 1024px) {
-    .nosotros-card-content {
-        padding: 1.5rem;
-    }
-    
-    .nosotros-card-title {
-        font-size: 1.8rem;
-    }
-    
-    .nosotros-card-description {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nosotros-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-    }
-    
-    .nosotros-card-1 {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    
-    .nosotros-card-2 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    
-    .nosotros-card-3 {
-        grid-column: 1;
-        grid-row: 3;
-        aspect-ratio: 16/9;
-    }
-    
-    .nosotros-card-content {
-        padding: 1.2rem;
-    }
-    
-    .nosotros-card-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .nosotros-card-description {
-        font-size: 0.95rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .nosotros-card-actions {
-        gap: 0.5rem;
+    .servicios {
+        padding: 2rem 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .nosotros-card-content {
-        padding: 1rem;
+    .hero-title {
+        font-size: 2rem;
     }
     
-    .nosotros-card-title {
-        font-size: 1.3rem;
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
-    .nosotros-card-description {
-        font-size: 0.9rem;
+    .servicios_titulo h1 {
+        font-size: 2rem;
     }
     
-    .nosotros-card:hover {
+    .servicios_contenido:hover {
         transform: translateY(-5px);
     }
+    
+    .contenedor-cirugia-p {
+        font-size: 1.2rem;
+    }
+    
+    .contenedor-final {
+        font-size: 1.3rem;
+    }
 }
-/* ================================================================================================================ */
-/* ========================================FIN Cartas en movimiento =============================================== */
-/* ================================================================================================================ */

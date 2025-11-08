@@ -1,4 +1,4 @@
-/* Variables de colores y fuentes */
+/* ========== VARIABLES GLOBALES ========== */
 :root {
     --primary: rgb(79, 127, 212);
     --secondary: #e9c46a;
@@ -10,7 +10,7 @@
     --transition: all 0.3s ease;
 }
 
-/* Reset y estilos generales */
+/* ========== RESET Y ESTILOS BASE ========== */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +22,9 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    background-color: var(--light);
 }
+
 a {
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -30,6 +32,7 @@ a {
     font-weight: 700;
     background-color: transparent;
 }
+
 ul {
     list-style: none;
 }
@@ -39,6 +42,14 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+section {
+    padding: 5rem 0;
+}
+
+/* ========== COMPONENTES REUTILIZABLES ========== */
+
+/* Botones */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -49,6 +60,7 @@ ul {
     transition: var(--transition);
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -56,18 +68,20 @@ ul {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
+
 .btn-secondary {
     background-color: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
+    text-decoration: none;
 }
+
 .btn-secondary:hover {
     background-color: var(--primary);
     color: white;
 }
-section {
-    padding: 5rem 0;
-}
+
+/* Títulos de sección */
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -75,7 +89,8 @@ section {
     color: var(--dark);
     position: relative;
 }
-.section-title:after {
+
+.section-title::after {
     content: '';
     display: block;
     width: 80px;
@@ -85,187 +100,81 @@ section {
     border-radius: 2px;
 }
 
-/* ---------------------------------------------------------------------------------------------------- */
-/* ----------------------inicio de CSS para el apartado: Contacto-------------------------------------- */
-/* ---------------------------------------------------------------------------------------------------- */
-
-/* Sección de Contacto */
-.fondo-contacto {
-  background: var(--text);
-  color: white;
-  padding: 0rem 0;
-  margin: 0rem 0;
-  text-align: center;
-  position: relative;
-}
- 
-.vision-contacto {
-  color: white;
-  padding: 1rem 1rem;
-  margin: 0rem 0;
-  text-align: center;
-}
-
-.contenedor-vision-contacto {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.vision-contacto h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.vision-contacto p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-
-
-/* ----------------------------------------- fin seccion de "contactanos" ---------------------------------------*/
-
-/* ----------Header y Navegación---------- */
+/* ========== HEADER Y NAVEGACIÓN ========== */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: var(--shadow);
-    padding: 1rem 0;
-    transition: var(--transition);
-}
-
-header.scrolled {
-    padding: 0.5rem 0;
-}
-
-.navbar {
+    padding: 5px;
+    background-color: var(--primary);
+    color: var(--dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 010;
+    z-index: 1000;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.logo i {
-    margin-right: 10px;
-    font-size: 2.2rem;
-}
-
-.nav-menu {
-    display: flex;
-}
-
-.nav-item {
-    margin: 0 1rem;
-}
-
-.nav-link {
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.nav-link:hover {
-    color: var(--primary);
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-/* ---------fin del header y navegación---------- */
-
-/* ----------nuevo menu---------- */
-header {
-  padding: 15px;
-  background-color: var(--primary);
-  color: var(--dark);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: -webkit-sticky;
-  /* Safari */
-  position: sticky;
-  top: 0;
-}
-.dropdownmenu ul,
-.dropdownmenu li {
-  margin: 0%;
-  padding: 0%;
-}
 .dropdownmenu ul {
-  background: var(--dark);
-  list-style: none;
-  width: 100%;
+    background: var(--dark);
+    list-style: none;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
 }
-.dropdownmenu li {
-  float: left;
-  position: relative;
-  width: auto;
-}
-.dropdownmenu a {
-  background: var(--primary);
-  color: #FFFFFF;
-  display: block;
-  font: bold 12px/20px sans-serif;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
-  font-size: 1.0em;
-}
-.dropdownmenu ul li a {
-  transform: 0.3s, 
-  background-color 0.3s ease;
-}
-.dropdownmenu ul li a:hover {
-  transform: translateY(6px);
-  /* la funcion:   "transform: scale" aumenta el tamaño del elemento */
-  background-color: var(--dark);
-}
-.dropdownmenu li:hover a {
-  background: var(--dark);
-}
-#submenu {
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 35px;
-  visibility: hidden;
-  z-index: 1;
-}
-li:hover ul#submenu {
-  opacity: 1;
-  top: 40px;
-  /* adjust this as per top nav padding top & bottom comes */
-  visibility: visible;
-}
-#submenu li {
-  float: none;
-  width: 100%;
-}
-#submenu a:hover {
-  background: var(--primary);
-}
-#submenu a {
-  background-color: var(--dark);
-}
-/* ----------fin del nuevo menu---------- */
 
-/* ----------Hero Section---------- */
+.dropdownmenu li {
+    float: left;
+    position: relative;
+    width: auto;
+        margin: 0%;
+    padding: 0%;
+}
+
+.dropdownmenu a {
+    background: var(--primary);
+    color: #FFFFFF;
+    display: block;
+    font: bold 50px/20px sans-serif;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    font-size: 1.0em;
+}
+
+.dropdownmenu ul li a:hover {
+    transform: translateY(6px);
+    background-color: var(--dark);
+}
+
+#submenu {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    visibility: hidden;
+    z-index: 1;
+}
+
+li:hover ul#submenu {
+    opacity: 1;
+    top: 40px;
+    visibility: visible;
+}
+
+#submenu li {
+    float: none;
+    width: 100%;
+}
+
+#submenu a {
+    background-color: var(--dark);
+}
+
+#submenu a:hover {
+    background: var(--primary);
+}
+
+/* ========== HERO SECTION ========== */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)), url('IMG/nueva portada de la cv.jpg') no-repeat center center/cover;
@@ -275,92 +184,182 @@ li:hover ul#submenu {
     text-align: center;
     padding-top: 80px;
 }
+
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
+
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
+
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
     font-weight: 300;
 }
-/* ----------fin de hero section---------- */
 
-/* ----------Servicios---------- */
+/* ========== SERVICIOS CON EFECTOS ========== */
 .services {
     background-color: var(--light);
 }
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}--
+}
+
 .service-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    border: 1px solid transparent;
 }
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.service-card:hover::before {
+    opacity: 0.8;
+}
+
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+
 .service-img {
     height: 200px;
     overflow: hidden;
 }
+
 .service-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .service-card:hover .service-img img {
     transform: scale(1.1);
 }
+
 .service-content {
     padding: 1.5rem;
+    position: relative;
+    z-index: 10;
 }
+
 .service-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--dark);
+    position: relative;
+    display: inline-block;
 }
-/* ----------fin de servicios---------- */
 
-/* ----------Testimonios---------- */
+.service-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary));
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 1px;
+}
+
+.service-card:hover .service-title::after {
+    width: 100%;
+}
+
+/* ========== TESTIMONIOS CON EFECTOS ========== */
 .testimonials {
     background: linear-gradient(to right, var(--primary), var(--dark));
     color: white;
 }
-.testimonials .section-title:after {
-    background: var(--secondary);
-}
+
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
+
 .testimonial-card {
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 12px;
     backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    border: 1px solid transparent;
 }
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.testimonial-card:hover::before {
+    opacity: 0.6;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
 .testimonial-text {
     font-style: italic;
     margin-bottom: 1.5rem;
 }
+
 .testimonial-author {
     display: flex;
     align-items: center;
 }
+
 .author-img {
     width: 50px;
     height: 50px;
@@ -368,61 +367,93 @@ li:hover ul#submenu {
     overflow: hidden;
     margin-right: 1rem;
 }
+
 .author-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
+    transition: transform 0.8s ease;
 }
-/* Sección de Misión con fondo especial */
+
+.testimonial-card:hover .author-img img {
+    transform: scale(1.1);
+}
+
+.testimonial-author h4 {
+    position: relative;
+    display: inline-block;
+}
+
+.testimonial-author h4::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary));
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testimonial-card:hover .testimonial-author h4::after {
+    width: 100%;
+}
+
+/* ========== MISIÓN Y VISIÓN ========== */
 .mision-empresa {
-  background: var(--secondary);
-  color: white;
-  padding: 4rem 2rem;
-  margin: 0rem 0;
-  text-align: center;
+    background: var(--secondary);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
 }
-.contenedor-mision {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.mision-empresa h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.mision-empresa p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-/* fin de Sección de Misión con fondo especial */
 
-/* Sección de Visión con fondo especial */
 .vision-empresa {
-  background: var(--dark);
-  color: white;
-  padding: 4rem 2rem;
-  margin: 0rem 0;
-  text-align: center;
+    background: var(--dark);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
 }
+
+.contenedor-mision,
 .contenedor-vision {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+.mision-empresa h2,
 .vision-empresa h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
 }
+
+.mision-empresa h2::after,
+.vision-empresa h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, white);
+    transition: width 0.6s ease;
+}
+
+.mision-empresa:hover h2::after,
+.vision-empresa:hover h2::after {
+    width: 100%;
+}
+
+.mision-empresa p,
 .vision-empresa p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
-/* fin de Sección de Visión con fondo especial */
 
-
-/* -----------------------------------------------------Contactanos----------------------------------------------------------------*/
-/* Selector de Sucursales */
+/* ========== CONTACTO ========== */
 .contact {
-background-color: var(--text); 
+    background-color: var(--text);
 }
 
 .contact-section-title {
@@ -430,6 +461,25 @@ background-color: var(--text);
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--light);
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.contact-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, white);
+    transition: width 0.6s ease;
+}
+
+.contact:hover .contact-section-title::after {
+    width: 80%;
 }
 
 .contact-text {
@@ -473,7 +523,6 @@ background-color: var(--text);
     color: white;
 }
 
-/* Contenido de Sucursales */
 .branch-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
@@ -494,187 +543,218 @@ background-color: var(--text);
     }
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-    .branch-selector {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .branch-btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-}
-
 .contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 40px;
-  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .contact-titlebox {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--primary);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  background: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    background: white;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.contact-titlebox::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary));
+    transition: width 0.6s ease;
+}
+
+.contact-info:hover .contact-titlebox::after {
+    width: 80%;
 }
 
 .contact-info {
-  flex: 1;
-  min-width: 10px;
+    flex: 1;
+    min-width: 10px;
     background: var(--primary);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .contact-info-info {
-  flex: 1;
-  min-width: 10px;
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: center;
+    flex: 1;
+    min-width: 10px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.contact-info-info h2 {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-info-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary));
+    transition: width 0.6s ease;
+}
+
+.contact-info-info:hover h2::after {
+    width: 80%;
 }
 
 .info-text p {
-  color: rgb(26, 117, 188);
-  font-size: 1rem;
-  text-align: left;
+    color: rgb(26, 117, 188);
+    font-size: 1rem;
+    text-align: left;
 }
 
 .contact-info h2 {
-  color: rgb(26, 117, 188);
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  padding-bottom: 25px;
-  border-bottom: 3px solid var(--primary);
+    color: rgb(26, 117, 188);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid var(--primary);
 }
 
 .info-text h3 {
-  margin-top: 15px;
-  color: rgb(26, 117, 188);
-  font-size: 1.2rem;
-  text-align: left;
+    margin-top: 15px;
+    color: rgb(26, 117, 188);
+    font-size: 1.2rem;
+    text-align: left;
 }
 
 .info-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .icon {
-  min-width: 40px;
-  height: 40px;
-  background-color: #e6f2ff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-  margin-top: 40px;
-  color: rgb(26, 117, 188);
-  font-size: 25px;
+    min-width: 40px;
+    height: 40px;
+    background-color: #e6f2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-top: 40px;
+    color: rgb(26, 117, 188);
+    font-size: 25px;
 }
 
-
-
 .map-container {
-  flex: 2;
-  min-width: 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-top: 50px;
+    flex: 2;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .map-container iframe {
-  width: 100%;
-  height: 550px;
-  border: none;
-  display: block;
+    width: 100%;
+    height: 550px;
+    border: none;
+    display: block;
 }
 
 .business-hours {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
-  font-size: 1.4rem;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    font-size: 1.4rem;
 }
 
 .business-hours h2 {
-  color: #1a75bc;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eaeaea;
+    color: #1a75bc;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaeaea;
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.business-hours h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary));
+    transition: width 0.6s ease;
+}
+
+.business-hours:hover h2::after {
+    width: 80%;
 }
 
 .hours-table {
-  width: 100%;
-  border-collapse: collapse;
- 
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .hours-table tr {
-  border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .hours-table tr:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .hours-table td {
-  padding: 12px 0;
+    padding: 12px 0;
 }
 
 .hours-table td:first-child {
-  text-align: center;
-  color: var(--primary);
+    text-align: center;
+    color: var(--primary);
 }
 
 .hours-table td:last-child {
-  text-align: center;
-  color: var(--primary);
+    text-align: center;
+    color: var(--primary);
 }
 
+/* ========== FOOTER ========== */
 footer {
-  text-align: center;
-  padding: 20px;
-  color: #666;
-  background: linear-gradient(to top, black, #666);
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    background: linear-gradient(to top, black, #666);
 }
 
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-
-  .map-container iframe {
-    height: 350px;
-  }
-}
-/* -----------------------------------------------------Fin Contactanos----------------------------------------------------------- */
-
-
-
-/* ----------BOTON  whatsapp---------- */
-
+/* ========== WHATSAPP ========== */
 .whatsapp-btn {
     position: fixed;
     bottom: 25px;
@@ -714,11 +794,6 @@ footer {
     width: 280px;
     display: none;
     animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .sucursal-header {
@@ -777,6 +852,114 @@ footer {
     color: #555;
 }
 
+/* ========== EFECTOS DE TÍTULOS MEJORADOS ========== */
+
+/* Servicios - Título con efecto */
+.services .section-title::after {
+    display: none;
+}
+
+.services .section-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.services .section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary));
+    transition: width 0.6s ease;
+}
+
+.services:hover .section-title::before {
+    width: 100%;
+}
+
+/* Testimonios - Título con efecto */
+.testimonials .section-title::after {
+    display: none;
+}
+
+.testimonials .section-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.testimonials .section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, white);
+    transition: width 0.6s ease;
+}
+
+.testimonials:hover .section-title::before {
+    width: 100%;
+}
+
+/* ========== CORRECCIÓN PARA ENLACES CLICKEABLES ========== */
+.service-card .btn,
+.service-card .btn-secondary {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto !important;
+}
+
+a.btn, 
+a.btn-secondary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+.service-card a {
+    position: relative;
+    z-index: 100;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .branch-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .branch-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .map-container iframe {
+        height: 350px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 600px) {
     .sucursal-selector {
         width: 250px;
@@ -790,4 +973,38 @@ footer {
         height: 55px;
     }
 }
-/* ----------fin de BOTON  whatsapp---------- */
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+
+/* ========== CORRECCIÓN PARA h4 EN TESTIMONIOS - COLOR BLANCO ========== */
+
+.testimonial-author h4::after {
+    background: linear-gradient(90deg, transparent, white) !important;
+}
+
+.testimonial-card:hover .testimonial-author h4::after {
+    width: 100%;
+}
